@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "stack.hpp"
 
 #define STACK_SIZE 10
@@ -28,19 +29,25 @@ void stack::pop() {
 }
 
 const int stack::top() {
-    return intStack[topIndex];
+    const int top = intStack[topIndex];
+    return top;
 }
 
 const bool stack::empty() {
-    return topIndex == -1;
+    const bool isEmpty = topIndex == INIT_INDEX;
+    return isEmpty;
 }
 
 const bool stack::full() {
-    return topIndex == STACK_SIZE INIT_INDEX;
+    const bool isFull = topIndex == STACK_SIZE INIT_INDEX;
+    return isFull;
 }
 
-const void stack::print() {
-    cout << "Stack contents:" << endl;
+const string stack::print() {
+    stringstream stackPrt;
+    stackPrt << "Stack contents:" << endl;
     for(int i = BEGIN; i <= topIndex; i++)
-        cout << i << ": " << intStack[i] << endl;
+        stackPrt << i << ": " << intStack[i] << endl;
+
+    return stackPrt.str();
 }

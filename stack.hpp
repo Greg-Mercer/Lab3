@@ -21,5 +21,5 @@ public:
     const int top();
     const bool empty();
     const bool full();
-    const void print();
+    const std::string print();
 };
