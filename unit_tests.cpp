@@ -32,9 +32,9 @@ TEST_CASE("Push test", "[stack]") {
 }
 
 /*
- * Verifies that a value can be pushed into the stack.
- * Precons: the stack is instantiated
- * Postcons: stack has one element: LAST_VALUE
+ * Verifies that the value at the top of the stack can be correctly identified.
+ * Precons: the stack is instantiated with one value
+ * Postcons: top() correctly identifies value at top of stack
  */
 TEST_CASE("Top test", "[stack]") {
     stack tester;
@@ -58,6 +58,7 @@ TEST_CASE("Fill stack", "[stack]") {
     }
 
     REQUIRE(tester.full() == true);
+    REQUIRE(tester.empty() == false);
     REQUIRE(tester.top() == LAST_VALUE);
 }
 
