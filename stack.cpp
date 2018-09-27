@@ -11,22 +11,6 @@
 
 using namespace std;
 
-class stack {
-
-    private:
-        int intStack[STACK_SIZE];
-        int topIndex;
-
-    public:
-        stack();
-        bool push(int value);
-        void pop();
-        const int top();
-        const bool empty();
-        const bool full();
-        const void print();
-};
-
 stack::stack() {
     topIndex = INIT_INDEX;
 }
